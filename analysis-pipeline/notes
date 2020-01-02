@@ -1,0 +1,5 @@
+For files that use macros:
+
+Wget all malicious files from a list of known bad links
+Run md5sum on files and group them in folders as such
+Run through olevba.py and look at output to see if macro is suspicious. Start to break down obfuscated code.
