@@ -13,7 +13,6 @@ def scrape_url(url, output_dir):
     r = requests.get(url, allow_redirects=True)
     d = r.headers['content-disposition']
     fname = re.findall("filename=(.+)", d)[0]
-    print (fname.lstrip("\"").rstrip("\""))
     open(os.path.join(output_dir, fname.lstrip("\"").rstrip("\"")), 'wb').write(r.content)
   except Exception as e:
     print(e)
