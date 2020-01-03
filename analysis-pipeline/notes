@@ -1,5 +1,26 @@
 For files that use macros:
 
-Wget all malicious files from a list of known bad links
+Need to add multiprocessing
+Get all malicious files from a list of known bad links
 Run md5sum on files and group them in folders as such
-Run through olevba.py and look at output to see if macro is suspicious. Start to break down obfuscated code.
+Fuzzy hashing
+Run through olevba.py - hashing/fuzzy hasing
+Analyze obfuscation techniques
+
+mal_url = 
+{
+"filename":"",
+"hash":"",
+"path_to_file":"",
+"path_to_macro":"",
+"macro_hash":"",
+"macro_obfuscation":"",
+"files_dropped":"link_to_droppped_file_attrs"
+}
+
+"dropped_file" = 
+{
+"hash":
+"mquery_for_more_info"
+}
+
