@@ -7,7 +7,9 @@ from multiprocessing import Queue
 from threading import Thread
 import sys
 
-concurrent = 200
+#future improvments
+#add writer function to rewrite md5 of file into csv
+#push csv or json format to ELK
 
 def check_dir_exists(dir):
   if not os.path.exists(dir):
@@ -21,7 +23,6 @@ def scrape_url():
       d = r.headers['content-disposition']
       fname = re.findall("filename=(.+)", d)[0]
       open(os.path.join("scraper_output/", fname.lstrip("\"").rstrip("\"")), 'wb').write(r.content)
-      # q.task_done()
     except Exception as e:
       print(e)
 
@@ -33,6 +34,7 @@ def parse_mal_urls(queue, file, tag):
         queue.put(row["url"])
         
 if __name__== "__main__" :
+  concurrent = 200
   q = Queue(concurrent)
   check_dir_exists("scraper_output/")
   for i in range(concurrent):
